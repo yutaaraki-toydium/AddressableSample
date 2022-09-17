@@ -43,17 +43,15 @@ Addressables GroupsウインドウでBuild>New Build>Default Build Scriptでア�
 * catalogは素材の依存関係情報と、その変更チェック用のファイル
 * .bundleは素材その物を圧縮したファイル(いわゆるアセットバンドル）
 
-S3等にこれらのファイルをアップロード
+## S3等にこれらのファイルをアップロード
+* 簡易的にServerData/xxx以下をLocalでホストすれば簡単なテストは行なえます。
 
-簡易的にServerData/xxx以下をLocalでホストすれば簡単なテストは行なえます。
-
-UnityでWindow>Asset Management>Addressables>Profilesを選択して
-
-Addressables Profilesを開く
-
-RemoteLoadPathを先にアップロードしたURLに変更
+## Profileの設定
+* UnityでWindow>Asset Management>Addressables>Profilesを選択してAddressables Profilesを開く
+* RemoteLoadPathを先にアップロードしたURLに変更
 
 ※下記ではLocalHostの:8000でServerData/StandaloneOSXをホストしているのでhttp://localhost:8000と設定しています。
+
 ※S3やCDNのアドレスを入れるプロファイルを別途作れば切り替えは簡単になるかと思います。
 <img width="754" alt="image" src="https://user-images.githubusercontent.com/55943829/190858539-4cd4a161-d54d-4d41-9297-54d5a264ad7d.png">
 
