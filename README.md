@@ -16,7 +16,7 @@ Addressables Group設定を開く
 * 適当な名前を付ける
 *　データを登録する
 画像ではLuffy/Zoro/BuggyのPng/Prefabを登録しています
-<img width="719" alt="image" src="https://user-images.githubusercontent.com/55943829/190857805-efc40c0d-b24c-4dd6-9c49-c2a795182701.png">
+<img width="363" alt="image" src="https://user-images.githubusercontent.com/55943829/190857805-efc40c0d-b24c-4dd6-9c49-c2a795182701.png">
 
 Groupの設定をRemoteにする
 * Groupを選択（画像ではPackage 001）
@@ -38,7 +38,7 @@ Addressables GroupsウインドウでBuild>New Build>Default Build Scriptでア�
 
 
 問題なければプロジェクトファイルの中にServerDataフォルダが作成され、下記のようなフォルダー構成ができている
-<img width="465" alt="image" src="https://user-images.githubusercontent.com/55943829/190858409-4f0fd132-c5e1-44b1-a096-00f218192b6e.png">
+<img width="363" alt="image" src="https://user-images.githubusercontent.com/55943829/190858409-4f0fd132-c5e1-44b1-a096-00f218192b6e.png">
 
 * catalogは素材の依存関係情報と、その変更チェック用のファイル
 * .bundleは素材その物を圧縮したファイル(いわゆるアセットバンドル）
@@ -53,12 +53,12 @@ Addressables GroupsウインドウでBuild>New Build>Default Build Scriptでア�
 ※下記ではLocalHostの:8000でServerData/StandaloneOSXをホストしているのでhttp://localhost:8000と設定しています。
 
 ※S3やCDNのアドレスを入れるプロファイルを別途作れば切り替えは簡単になるかと思います。
-<img width="754" alt="image" src="https://user-images.githubusercontent.com/55943829/190858539-4cd4a161-d54d-4d41-9297-54d5a264ad7d.png">
+<img width="363" alt="image" src="https://user-images.githubusercontent.com/55943829/190858539-4cd4a161-d54d-4d41-9297-54d5a264ad7d.png">
 
 Addressables GroupsのPlay Mode ScriptをUse Existing Buildに変更します。Use Existing Buildにすることでアセットバンドルから素材を読み込むようになります。
 
 
-## 以下備考点
+## 以下留意点
 
 ### カタログの肥大化には注意する
 各AssetBundleへのリンクや内容物へのIndexが保管されているのがカタログですが、このカタログが肥大化するとパフォーマンスが低下しやすいです。
