@@ -55,5 +55,32 @@ Addressables GroupsウインドウでBuild>New Build>Default Build Scriptでア�
 ※S3やCDNのアドレスを入れるプロファイルを別途作れば切り替えは簡単になるかと思います。
 <img width="754" alt="image" src="https://user-images.githubusercontent.com/55943829/190858539-4cd4a161-d54d-4d41-9297-54d5a264ad7d.png">
 
+Addressables GroupsのPlay Mode ScriptをUse Existing Buildに変更します。Use Existing Buildにすることでアセットバンドルから素材を読み込むようになります。
 
-* Build & Load PathをRemoteに設定
+
+## 以下備考点
+
+### カタログの肥大化には注意する
+各AssetBundleへのリンクや内容物へのIndexが保管されているのがカタログですが、このカタログが肥大化するとパフォーマンスが低下しやすいです。
+* Jsonデータなので件数が増えるとパースするだけで結構重くなる
+* メモリも食う
+* 一定のしきい値以上のアイテムが登録された場合は新しいGroupを作るような仕組みは必要
+* どうしても1カタログで管理したい場合はJsonをProtobufの様なパース速度が高速なフォーマットなどに変更するのが良い
+  * メンテナビリティ等を考慮すると完全に悪手なので、おすすめはしない
+  * Addressables/AssetBundleの設計思想的に細かいファイルを大量に保存するようには出来ていない。
+  * これは細かい実装を追っていけば分かりやすい
+  * 精々Prefab単位でデータを登録し、カテゴリ毎くらいにラベル分けし、ラベル＝AssetBundleというような形が望ましい
+  * AssetBundleの仕組み上ファイルの利用状況をファイルシステム上にLockファイルを生成して管理しているので、そのロックファイル＋開いてるAssetBundleがOSのしきい値を超えてしまうとそこでエラーになってしまう。
+
+### Group管理やラベル生成用のEditorスクリプト
+Groupの作成やラベルの生成にはそれ用のEditorスクリプトを用意すること
+* 基本的に多数のアセットをDrag&Dropで登録していく管理方法は破綻しやすいです
+* 登録件数が多いと登録処理に時間がかかったりします
+* ディレクトリ構造からGroup分けやラベル生成を作れる様にするのがアセットの指定と合わせやすく、直感的に使えて楽だと思います。
+* ビルド時にこのスクリプトを実行すれば漏れ等も減らせます
+
+### デプロイフロー
+* 最終的には上記の`Build>New Build>Default Build Scriptでアセットバンドルをビルド`相当の動きをするEditor Scriptを作る
+* それを実行+成果物をS3へアップロードする、というスクリプトでAssetBundleのデプロイをする形
+* S3に関してはアップロード先を決めておきCloudFrontをその前に立てて上げて最終的なURLが確定出来ればそれをUnity内でセットする形
+* 上記で`localhost`への接続を設定している箇所をCDNのURLに置き換えればすぐ参照先をCDNにしたビルドを作れるはず
