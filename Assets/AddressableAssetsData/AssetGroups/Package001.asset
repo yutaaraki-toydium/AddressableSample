@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Package001
+  m_EditorClassIdentifier: 
+  m_GroupName: Package001
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 949d2d9305e724260901c18354776c0d
+  m_SerializeEntries:
+  - m_GUID: 6643ef86937a24bfda2911dc1b640ae3
+    m_Address: Buggy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Onepiece
+  - m_GUID: 4c488be594db248b3b6788359200d4f6
+    m_Address: Luffy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Onepiece
+  - m_GUID: a6698f4a519d74cdb8def22a43ccb2ec
+    m_Address: Zoro
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Onepiece
+  - m_GUID: f64b72296d43e4a4289a6c57e5c4e64e
+    m_Address: Buggy.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OnepieceImg
+  - m_GUID: 7dbd8b332af68435886d923640acb440
+    m_Address: Zoro.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OnepieceImg
+  - m_GUID: 11bcbac8ef3d748af8a35a790012532c
+    m_Address: Luffy.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OnepieceImg
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fb7bc83189cd445a7977356283aaf88c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6b51b40cb418c40ff9aa1b598b27581c, type: 2}
+    - {fileID: 11400000, guid: b4c403e33fa2444c29654692be9a76a5, type: 2}
